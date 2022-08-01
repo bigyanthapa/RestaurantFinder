@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">RestaurantFinder</string>
+    <string name="action_map_view">Map</string>
+    <string name="action_list_view">List</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="restaurants_nearby">Restaurants Nearby</string>
+    <string name="restaurants_details">Restaurants Details</string>
+
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="rating">%1$.2f stars</string>
+    <string name="location_permission_required_message">Location permission required to search nearby restaurants.</string>
+    <string name="location_empty_error_message">Could not retrieve location, please try again later.</string>
+    <string name="detail_empty_error_message">Could not retrieve restaurant detail, please try again later.</string>
+    <string name="restaurant_picture">Restaurant Picture</string>
+    <string name="opening_hours">Opening Hours</string>
+    <string name="empty_restaurants_error">Could not retrieve restaurants, please try again later.</string>
+</resources>

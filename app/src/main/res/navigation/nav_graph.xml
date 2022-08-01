@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/RestaurantFragment">
+
+    <fragment
+        android:id="@+id/RestaurantFragment"
+        android:name="com.concept.finder.restaurant.RestaurantFragment"
+        android:label="@string/restaurants_nearby"
+        tools:layout="@layout/fragment_restaurant">
+
+        <action
+            android:id="@+id/restaurantToRestaurantMapAction"
+            app:destination="@id/RestaurantMapFragment" />
+
+        <action
+            android:id="@+id/restaurantDetailAction"
+            app:destination="@id/RestaurantDetailFragment">
+            <argument
+                android:name="id"
+                app:argType="string"
+                android:defaultValue=""/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/RestaurantMapFragment"
+        android:name="com.concept.finder.restaurant.RestaurantMapFragment"
+        android:label="@string/restaurants_nearby"
+        tools:layout="@layout/fragment_restaurant_map">
+
+        <action
+            android:id="@+id/restaurantMapToRestaurantAction"
+            app:destination="@id/RestaurantFragment"
+            app:popUpTo="@id/RestaurantFragment"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/restaurantMapToDetailAction"
+            app:destination="@id/RestaurantDetailFragment">
+            <argument
+                android:name="id"
+                app:argType="string"
+                android:defaultValue=""/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/RestaurantDetailFragment"
+        android:name="com.concept.finder.detail.RestaurantDetailFragment"
+        android:label="@string/restaurants_details">
+
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue=""/>
+        <action
+            android:id="@+id/restaurantDetailToRestaurantFragmentAction"
+            app:destination="@id/RestaurantFragment" />
+
+        <action
+            android:id="@+id/restaurantDetailToRestaurantMapFragmentAction"
+            app:destination="@id/RestaurantMapFragment" />
+    </fragment>
+</navigation>
