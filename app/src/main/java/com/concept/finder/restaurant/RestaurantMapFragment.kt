@@ -71,18 +71,14 @@ class RestaurantMapFragment : Fragment(), MenuProvider, OnMapReadyCallback {
     override fun onMapReady(map: GoogleMap) {
         googleMap = map
         val viewModel = (requireActivity() as MainActivity).viewModel
-        if (viewModel.cachedRestaurants.isEmpty()) {
-            viewModel.restaurantState.observe(viewLifecycleOwner) { restaurantState ->
-                restaurantState?.let { state ->
-                    when (state) {
-                        Loading -> binding.progressBar.isVisible = true
-                        is Success -> onRestaurantReceived(state.restaurants)
-                        Error -> onError()
-                    }
+        viewModel.restaurantState.observe(viewLifecycleOwner) { restaurantState ->
+            restaurantState?.let { state ->
+                when (state) {
+                    Loading -> binding.progressBar.isVisible = true
+                    is Success -> onRestaurantReceived(state.restaurants)
+                    Error -> onError()
                 }
             }
-        } else {
-            onRestaurantReceived(viewModel.cachedRestaurants)
         }
     }
 
