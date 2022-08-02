@@ -133,7 +133,7 @@ class RestaurantFragment : Fragment(), MenuProvider {
     }
 
     private fun onError() {
-        binding.progressBar.isVisible = false
+        onLocationPermissionDeniedError()
         Snackbar.make(
             binding.root,
             R.string.empty_restaurants_error,
@@ -142,11 +142,9 @@ class RestaurantFragment : Fragment(), MenuProvider {
     }
 
     private fun onLocationPermissionDeniedError() {
-        Snackbar.make(
-            binding.root,
-            R.string.location_permission_required_message,
-            Toast.LENGTH_LONG
-        ).show()
+        binding.progressBar.isVisible = false
+        binding.permissionMessageContainer.isVisible = true
+        binding.restaurants.isVisible = false
     }
 
     private fun onEmptyLocationError() {

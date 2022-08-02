@@ -20,4 +20,6 @@
     <string name="restaurant_picture">Restaurant Picture</string>
     <string name="opening_hours">Opening Hours</string>
     <string name="empty_restaurants_error">Could not retrieve restaurants, please try again later.</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="permission_message">Location permission is required to search nearby restaurants.</string>
 </resources>
